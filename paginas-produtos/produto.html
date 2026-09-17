@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do Livro | Lumina Livros</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <div class="logo">Lumina</div>
+    <nav>
+      <ul class="menu-principal">
+        <li><a href="../homepage.html">Início</a></li>
+        <li><a href="../catalogo.html">Catálogo</a></li>
+        <li><a href="../galeria.html">Galeria</a></li>
+        <li><a href="../empresa.html">Empresa</a></li>
+        <li><a href="../documento.html">Documentos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container" style="padding-top: var(--espaco-md);">
+
+    <!-- TODO Leonardo (Req 17): carregar dados do produto via JS,
+         lendo o parâmetro ?id= da URL e buscando em produtos.json -->
+    <section id="dados-produto">
+      <h1 id="titulo-produto">[Título do livro]</h1>
+    </section>
+
+    <!-- ===== TABELA DE DETALHES TÉCNICOS (Req 12) =====
+         5 colunas x 15 linhas, com 4 mesclagens de coluna (colspan),
+         4 mesclagens de linha (rowspan) e cores diferentes por célula.
+         Estrutura de exemplo abaixo — Nathan deve completar. -->
+    <section>
+      <h2>Ficha Técnica</h2>
+      <table id="tabela-detalhes" style="width:100%; border-collapse: collapse;">
+        <caption style="text-align:left; margin-bottom: var(--espaco-xs);">Detalhes do produto</caption>
+        <thead>
+          <tr>
+            <th colspan="5" style="background: var(--cor-destaque); padding: 8px;">Ficha do Livro</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- TODO: montar as 15 linhas restantes com colspan/rowspan
+               e cores de fundo diferentes em cada célula -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ===== RESENHA LONGA COM ÂNCORA (Req 6 e Req 9) =====
+         Texto longo com formatações variadas e link para voltar ao topo. -->
+    <section id="topo-resenha">
+      <h2>Resenha</h2>
+      <p>
+        <!-- TODO Nathan (Req 9): usar <strong>, <em>, <u>, <sup>, <sub>,
+             <s>, <small>/<big> (tamanhos), diferentes <h3>/<h4> (títulos),
+             <blockquote> (citação) ao longo do texto. -->
+      </p>
+
+      <p style="margin-top: var(--espaco-md);">
+        <a href="#topo-resenha">↑ Voltar ao topo</a>
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Ciência da Computação | Desenvolvimento Web | Turma B</p>
+    <p>João Wíctor Gomes Rodrigues de Oliveira · Leonardo Maneiro · Nathan Henrique da Silva Carvalho</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

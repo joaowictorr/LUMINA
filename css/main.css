@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+/* --- 1. Variáveis de Design (Design Tokens) ---
+   Definidas conforme o Documento de Planejamento, seção 1.1 e 1.2. */
+:root {
+  /* Cores - fundo */
+  --cor-fundo: #fff7e3;          /* Creme Suave */
+  --cor-fundo-alt: #d7ebff;      /* Branco Azulado*/
+
+  /* Cores - texto */
+  --cor-texto: #000c2c;          /* Azul Marinho Profundo */
+  --cor-texto-alt: #000c2c;      /* Azul Marinho Profundo (opcional p/ títulos) */
+
+  /* Cores - destaque */
+  --cor-destaque: #FBBF24;       /* Amarelo Âmbar (botões, bordas, ícones) */
+  --cor-destaque-escuro: #D97706;/* Dourado Queimado (hover, detalhes) */
+
+  /* Tipografia */
+  --fonte-titulo: 'Playfair Display', serif;
+  --fonte-corpo: 'Inter', sans-serif;
+
+  /* Espaçamentos padrão */
+  --espaco-xs: 0.5rem;
+  --espaco-sm: 1rem;
+  --espaco-md: 2rem;
+  --espaco-lg: 4rem;
+
+  /* Bordas e sombra sutil*/
+  --raio-padrao: 8px;
+  --sombra-suave: 0 2px 8px rgba(17, 17, 17, 0.06);
+}
+
+/* --- 2. Reset básico --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* facilita o link de âncora do Req 6 */
+}
+
+body {
+  font-family: var(--fonte-corpo);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  font-family: var(--fonte-titulo);
+  color: var(--cor-texto-alt);
+  line-height: 1.2;
+}
+
+/* --- 3. Cabeçalho / Menu principal (Req 3 - mínimo 5 itens) ---
+   Este bloco de header/nav deve ser igual em tds as pags,
+   trocando apenas a classe "ativo" no item correspondente. */
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--espaco-sm) var(--espaco-md);
+  background-color: var(--cor-fundo);
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cor-texto-alt);
+}
+
+.menu-principal {
+  display: flex;
+  list-style: none;
+  gap: var(--espaco-md);
+}
+
+.menu-principal a {
+  font-weight: 500;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.menu-principal a:hover,
+.menu-principal a.ativo {
+  border-color: var(--cor-destaque);
+}
+
+/* --- 4. Rodapé padrão (Req: nome do curso/disciplina/turma/integrantes) --- */
+.rodape {
+  background-color: var(--cor-texto-alt);
+  color: #F8FAFC;
+  padding: var(--espaco-md);
+  margin-top: var(--espaco-lg);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.rodape a {
+  color: var(--cor-destaque);
+}
+
+/* --- 5. Utilitários gerais --- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--espaco-md);
+}
+
+.botao {
+  display: inline-block;
+  background-color: var(--cor-destaque);
+  color: var(--cor-texto);
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--raio-padrao);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.botao:hover {
+  background-color: var(--cor-destaque-escuro);
+  color: #fff;
+}
+
+/* --- 6. Responsividade base (Req 16) ---
+   Ajustar/expandir conforme cada página for construída. */
+@media (max-width: 768px) {
+  .cabecalho {
+    flex-direction: column;
+    gap: var(--espaco-sm);
+  }
+
+  .menu-principal {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--espaco-sm);
+  }
+}

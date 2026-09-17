@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria | Lumina Livros</title>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    /* Estilo específico desta página: grid de 3 colunas (Req 4) */
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      /* 3 colunas - Req 4 */
+      gap: var(--espaco-sm);
+      padding: var(--espaco-md) 0;
+    }
+
+    /* cada item é um <figure>: imagem + legenda (título do livro) */
+    .item-galeria {
+      overflow: hidden;
+      border-radius: var(--raio-padrao);
+      box-shadow: var(--sombra-suave);
+      background-color: var(--cor-fundo-alt);
+    }
+
+    .item-estudo-galeria {
+      overflow: hidden;
+      border-radius: var(--raio-padrao);
+      box-shadow: var(--sombra-suave);
+      background-color: var(--cor-fundo-alt);
+    }
+    .item-galeria img {
+      width: 100%;
+      height: 260px;
+      /* mesma altura para todas -> "mesmo tamanho" */
+      object-fit: cover;
+      /* corta a imagem sem distorcer */
+      display: block;
+      transition: transform 0.25s ease;
+    }
+
+    .item-galeria:hover img {
+      transform: scale(1.04);
+    }
+
+    .item-galeria figcaption {
+      padding: var(--espaco-xs);
+      font-size: 0.9rem;
+      text-align: center;
+      color: var(--cor-texto);
+    }
+
+    /* Responsividade: 2 colunas em tablet, 1 em celular (Req 16) */
+    @media (max-width: 900px) {
+      .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .galeria-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="cabecalho">
+    <div class="logo">Lumina</div>
+    <nav>
+      <ul class="menu-principal">
+        <li><a href="homepage.html">Início</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="galeria.html" class="ativo">Galeria</a></li>
+        <li><a href="empresa.html">Empresa</a></li>
+        <li><a href="documento.html">Documentos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Galeria</h1>
+      <p>Capas e edições especiais do nosso catálogo.</p>
+      <div class="galeria-grid">
+        <figure class="item-galeria">
+          <img src="img/galeria/OPoderosoChefao.jpg" alt="Capa do livro O Poderoso Chefão">
+          <figcaption>O Poderoso Chefão</figcaption>
+        </figure>
+        <figure class="item-galeria">
+          <img src="img/galeria/OsSeteMaridosDeEvelynHugo.jpg" alt="Capa do livro Os Sete Maridos de Evelyn Hugo">
+          <figcaption>Os Sete Maridos de Evelyn Hugo</figcaption>
+        </figure>
+        <figure class="item-galeria">
+          <img src="img/galeria/AmanhecerNaColheita.jpg" alt="Capa do livro Amanhecer Na Colheita (Jogos Vorazes 5)">
+          <figcaption>Amanhecer Na Colheita (Jogos Vorazes 5)</figcaption>
+        </figure>
+        <figure class="item-galeria">
+          <img src="img/galeria/Suicidas.jpg" alt="Capa do livro Suicidas">
+          <figcaption>Suicidas</figcaption>
+        </figure>
+        <figure class="item-galeria">
+          <img src="img/galeria/RivalidadeArdente.jpg" alt="Capa do livro Rivalidade Ardente - Heated Rivalry">
+          <figcaption>Rivalidade Ardente - Heated Rivalry</figcaption>
+        </figure>
+        <figure class="item-galeria">
+          <img src="img/galeria/AGarotaDoLago.jpg" alt="Capa do livro A Garota do Lago">
+          <figcaption>A Garota do Lago</figcaption>
+        </figure>
+        <figure class="item-galeria">
+          <img src="img/galeria/ACabecaDoSanto.jpg" alt="Capa do livro A Cabeça do Santo">
+          <figcaption>A Cabeça do Santo</figcaption>
+        </figure>
+        <figure class="item-galeria">
+          <img src="img/galeria/AssassinatoNoExpressoDoOriente.jpg" alt="Capa do livro Assasinato no Expresso Oriente">
+          <figcaption>Assassinato no Expresso do Oriente</figcaption>
+        </figure>
+        <figure class="item-galeria">
+          <img src="img/galeria/AmorTeoricamente.jpg" alt="Capa do livro Amor, Teoricamente">
+          <figcaption>Amor, Teoricamente</figcaption>
+        </figure>
+        <figure class="item-galeria">
+          <img src="img/galeria/AindaEstouAqui.jpg" alt="Capa do livro Ainda Estou Aqui">
+          <figcaption>Ainda Estou Aqui</figcaption>
+        </figure>
+        <figure class="item-galeria">
+          <img src="img/galeria/ARevolucaoDosBichos.jpg" alt="Capa do livro A Revolução dos Bichos">
+          <figcaption>A Revolução dos Bichos</figcaption>
+        </figure>
+        <figure class="item-galeria">
+          <img src="img/galeria/CrimeECastigo.jpg" alt="Capa do livro Crime e Castigo">
+          <figcaption>Crime e Castigo</figcaption>
+        </figure>
+        <figure class="item-galeria">
+          <img src="img/galeria/OCortico.jpg" alt="Capa do livro O Cortiço - Coleção de Bolso">
+          <figcaption>O Cortiço - Coleção de Bolso</figcaption>
+        </figure>
+        <figure class="item-galeria">
+          <img src="img/galeria/CleopatraEFrankestein.jpg" alt="Capa do livro Cleópatra e Frankestein">
+          <figcaption>Cleópatra e Frankestein</figcaption>
+        </figure>
+        <figure class="item-galeria">
+          <img src="img/galeria/AEmpregada.jpg" alt="Capa do livro A Empregada">
+          <figcaption>A Empregada</figcaption>
+        </figure>
+        <figure class="item-galeria">
+          <img src="img/galeria/BonsTempos.jpg" alt="Capa do livro Bons Tempos: Yesteryear">
+          <figcaption>Bons Tempos: Yesteryear</figcaption>
+        </figure>
+        <figure class="item-galeria">
+          <img src="img/galeria/Quando.jpg" alt="Capa do livro Quando">
+          <figcaption>Quando</figcaption>
+        </figure>
+        <figure class="item-galeria">
+          <img src="img/galeria/ANoiteDasBruxas.jpg" alt="Capa do livro A Noite Das Bruxas">
+          <figcaption>A Noite Das Bruxas</figcaption>
+        </figure>
+        <figure class="item-galeria">
+          <img src="img/galeria/ConviteParaUmHomicidio.jpg" alt="Capa do livro Convite Para um Homicídio">
+          <figcaption>Convite Para um Homicídio</figcaption>
+        </figure>
+        <figure class="item-galeria">
+          <img src="img/galeria/OPovoBrasileiro.jpg"
+            alt="Capa do livro O Povo Brasileiro: A Formação e o Sentido do Brasil">
+          <figcaption>O Povo Brasileiro: A Formação e o Sentido do Brasil</figcaption>
+        </figure>
+        <figure class="item-galeria">
+          <img src="img/galeria/JornadaDevOps.jpg" alt="Capa do livro Jornada DevOps">
+          <figcaption>Jornada DevOps</figcaption>
+        </figure>
+        <figure class="item-estudo-galeria">
+          <img src="img/galeria/SistemasOperacionaisModernos.jpg" alt="Capa do livro Sistemas Operacionais Modernos">
+          <figcaption>Sistemas Operacionais Modernos</figcaption>
+        </figure>
+        <figure class="item-galeria">
+          <img src="img/galeria/FundamentosDeHTML5ECSS3.jpg" alt="Capa do livro Fundamentos de HTML5 e CSS3">
+          <figcaption>Fundamentos de HTML5 e CSS3</figcaption>
+        </figure>
+        <figure class="item-galeria">
+          <img src="img/galeria/SistemaDeBancoDeDados.jpg" alt="Capa do livro Sistema de Banco de Dados">
+          <figcaption>Sistema de Banco de Dados</figcaption>
+        </figure>
+        <figure class="item-galeria">
+          <img src="img/galeria/MedicinaFetal.jpg" alt="Capa do livro Medicina Fetal: diagnóstico pré natal e conduta">
+          <figcaption>Medicina Fetal: diagnóstico pré natal e conduta</figcaption>
+        </figure>
+        </div>
+  </main>
+
+  <footer class="rodape">
+    <p>Ciência da Computação | Desenvolvimento Web | Turma B</p>
+    <p>João Wíctor Gomes Rodrigues de Oliveira · Leonardo Maneiro · Nathan Henrique da Silva Carvalho</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
