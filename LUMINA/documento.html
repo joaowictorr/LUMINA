@@ -10,7 +10,8 @@
 
   <header class="cabecalho">
     <div class="logo">Lumina</div>
-    <nav>
+    <div class="area-direita">
+      <nav>
       <ul class="menu-principal">
         <li><a href="homepage.html">Início</a></li>
         <li><a href="catalogo.html">Catálogo</a></li>
@@ -19,8 +20,33 @@
         <li><a href="empresa.html">Empresa</a></li>
         <li><a href="documento.html" class="ativo">Documentos</a></li>
       </ul>
-    </nav>
+          </nav>
+      <button id="botao-carrinho-header" class="botao-carrinho-header" aria-label="Abrir carrinho de compras">
+        <span aria-hidden="true">🛒</span>
+        <span id="carrinho-contador" class="carrinho-contador">0</span>
+      </button>
+    </div>
   </header>
+
+  <!-- ===== PAINEL DO CARRINHO (Req 17: carrinho de compras básico) ===== -->
+  <aside id="painel-carrinho" class="painel-carrinho">
+    <div class="painel-carrinho-topo">
+      <h2>Seu Carrinho</h2>
+      <button id="botao-fechar-carrinho" class="botao-fechar-carrinho" aria-label="Fechar carrinho">×</button>
+    </div>
+    <ul id="carrinho-lista" class="carrinho-lista">
+      <!-- Preenchido dinamicamente por js/carrinho.js -->
+    </ul>
+    <div class="painel-carrinho-rodape">
+      <div class="carrinho-total-linha">
+        <span>Total</span>
+        <strong id="carrinho-total">R$ 0,00</strong>
+      </div>
+      <button id="botao-finalizar-compra" class="botao">Finalizar Compra</button>
+      <button id="botao-esvaziar-carrinho" class="botao botao-secundario">Esvaziar carrinho</button>
+    </div>
+  </aside>
+  <div id="fundo-carrinho" class="fundo-carrinho"></div>
 
   <main class="container" style="padding-top: var(--espaco-md);">
     <h1>Documentação do Projeto</h1>
@@ -44,6 +70,7 @@
     <p>João Wíctor Gomes Rodrigues de Oliveira · Leonardo Maneiro · Nathan Henrique da Silva Carvalho</p>
   </footer>
 
+  <script src="js/carrinho.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

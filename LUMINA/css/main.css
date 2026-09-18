@@ -108,6 +108,201 @@ h2 {
   border-color: var(--cor-destaque);
 }
 
+/* Agrupa o menu e o ícone do carrinho do lado direito do cabeçalho */
+.area-direita {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-md);
+}
+
+/* --- 3.1 Ícone do carrinho no cabeçalho (Req 17: carrinho de compras) --- */
+.botao-carrinho-header {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  line-height: 1;
+  padding: 0.3rem;
+}
+
+.carrinho-contador {
+  position: absolute;
+  top: -4px;
+  right: -8px;
+  background-color: var(--cor-destaque-escuro);
+  color: #fff;
+  font-family: var(--fonte-corpo);
+  font-size: 0.7rem;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+/* --- 3.2 Painel lateral do carrinho --- */
+.fundo-carrinho {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 12, 44, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 20;
+}
+
+.fundo-carrinho.visivel {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.painel-carrinho {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 360px;
+  max-width: 90vw;
+  background-color: #fffefb;
+  box-shadow: -4px 0 16px rgba(17, 17, 17, 0.15);
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+  z-index: 21;
+  display: flex;
+  flex-direction: column;
+}
+
+.painel-carrinho.aberto {
+  transform: translateX(0);
+}
+
+.painel-carrinho-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--espaco-md);
+  border-bottom: 1px solid #eee;
+}
+
+.painel-carrinho-topo h2 {
+  margin-bottom: 0;
+  font-size: 1.3rem;
+}
+
+.botao-fechar-carrinho {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--cor-texto);
+}
+
+.carrinho-lista {
+  list-style: none;
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--espaco-sm) var(--espaco-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-sm);
+}
+
+.carrinho-vazio {
+  text-align: center;
+  color: #777;
+  margin-top: var(--espaco-lg);
+}
+
+.carrinho-item {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: var(--espaco-xs);
+  align-items: center;
+  padding-bottom: var(--espaco-sm);
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.carrinho-item img {
+  width: 56px;
+  height: 72px;
+  object-fit: contain;
+  background-color: var(--cor-fundo-alt);
+  border-radius: 4px;
+}
+
+.carrinho-item-titulo {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.carrinho-item-preco {
+  font-size: 0.85rem;
+  color: var(--cor-destaque-escuro);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.carrinho-item-quantidade {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.botao-quantidade {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.botao-quantidade:hover {
+  background-color: var(--cor-fundo-alt);
+}
+
+.botao-remover-item {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  align-self: start;
+}
+
+.painel-carrinho-rodape {
+  padding: var(--espaco-md);
+  border-top: 1px solid #eee;
+}
+
+.carrinho-total-linha {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--espaco-sm);
+  font-size: 1.1rem;
+}
+
+.painel-carrinho-rodape .botao {
+  width: 100%;
+  text-align: center;
+  margin-bottom: var(--espaco-xs);
+}
+
+@media (max-width: 768px) {
+  .area-direita {
+    flex-direction: column;
+    gap: var(--espaco-sm);
+  }
+}
+
 /* --- 4. Rodapé padrão (Req: nome do curso/disciplina/turma/integrantes) --- */
 .rodape {
   background-color: var(--cor-texto-alt);
@@ -435,6 +630,39 @@ h2 {
 
 .card-lancamento-preco {
   font-weight: 700;
+}
+
+/* Linha com preço + botão "Adicionar ao Carrinho", fora do link do card
+   (evita colocar botão dentro de <a>, o que é inválido em HTML) */
+.card-lancamento-rodape {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espaco-xs);
+  padding: 0 var(--espaco-sm) var(--espaco-sm);
+}
+
+.botao-adicionar-carrinho {
+  background-color: var(--cor-destaque);
+  color: var(--cor-texto);
+  border: none;
+  border-radius: var(--raio-padrao);
+  padding: 0.4rem 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.botao-adicionar-carrinho:hover {
+  background-color: var(--cor-destaque-escuro);
+  color: #fff;
+}
+
+.botao-adicionar-carrinho.adicionado {
+  background-color: #16a34a;
+  color: #fff;
 }
 
 /* --- 9. Homepage: Patrocinadores (Req 11: mínimo 4 propagandas) ---

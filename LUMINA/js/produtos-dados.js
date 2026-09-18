@@ -1,4 +1,4 @@
-[
+const produtos = [
   {
     "id": 1,
     "titulo": "O Poderoso Chefão",
@@ -32,7 +32,7 @@
     "categoria": "Livro"
   },
   {
-    "id": 4,
+    "id": 3,
     "titulo": "Amanhecer Na Colheita (Jogos Vorazes 5)",
     "autor": "Suzanne Collins",
     "genero": "Distopia",
@@ -48,7 +48,7 @@
     "categoria": "Livro"
   },
   {
-    "id": 6,
+    "id": 4,
     "titulo": "Suicidas",
     "autor": "Raphael Montes",
     "genero": "Suspense",
@@ -64,7 +64,7 @@
     "categoria": "Livro"
   },
   {
-    "id": 7,
+    "id": 5,
     "titulo": "Rivalidade Ardente - Heated Rivalry",
     "autor": "Rachel Reid",
     "genero": "Romance",
@@ -80,7 +80,7 @@
     "categoria": "Livro"
   },
   {
-    "id": 8,
+    "id": 6,
     "titulo": "A Garota do Lago",
     "autor": "Charlie Donlea",
     "genero": "Suspense",
@@ -96,7 +96,7 @@
     "categoria": "Livro"
   },
   {
-    "id": 9,
+    "id": 7,
     "titulo": "A Cabeça do Santo",
     "autor": "Socorro Acioli",
     "genero": "Ficção",
@@ -112,7 +112,7 @@
     "categoria": "Livro"
   },
   {
-    "id": 10,
+    "id": 8,
     "titulo": "Assasinato no Expresso Oriente",
     "autor": "Agatha Christie",
     "genero": "Mistério",
@@ -128,7 +128,7 @@
     "categoria": "Livro"
   },
   {
-    "id": 11,
+    "id": 9,
     "titulo": "Amor, Teoricamente",
     "autor": "Ali Hazelwood",
     "genero": "Romance",
@@ -144,7 +144,7 @@
     "categoria": "Livro"
   },
   {
-    "id": 12,
+    "id": 10,
     "titulo": "Ainda Estou Aqui",
     "autor": "Marcelo Rubens Paiva",
     "genero": "Biografia/Drama",
@@ -160,7 +160,7 @@
     "categoria": "Livro"
   },
   {
-    "id": 13,
+    "id": 11,
     "titulo": "A Revolução dos Bichos",
     "autor": "George Orwell",
     "genero": "Clássico/Fábula Política",
@@ -176,7 +176,7 @@
     "categoria": "Livro"
   },
   {
-    "id": 15,
+    "id": 12,
     "titulo": "Crime e Castigo",
     "autor": "Fiódor Dostoiévski",
     "genero": "Clássico",
@@ -192,7 +192,7 @@
     "categoria": "Livro"
   },
   {
-    "id": 16,
+    "id": 13,
     "titulo": "O Cortiço - Coleção de Bolso",
     "autor": "Aluísio de Azevedo",
     "genero": "Clássico Brasileiro",
@@ -208,7 +208,7 @@
     "categoria": "Livro"
   },
   {
-    "id": 17,
+    "id": 14,
     "titulo": "Cleópatra e Frankestein",
     "autor": "Coco Mellors",
     "genero": "Ficção Contemporânea",
@@ -224,7 +224,7 @@
     "categoria": "Livro"
   },
   {
-    "id": 18,
+    "id": 15,
     "titulo": "A Empregada",
     "autor": "Freida McFadden",
     "genero": "Suspense",
@@ -240,7 +240,7 @@
     "categoria": "Livro"
   },
   {
-    "id": 19,
+    "id": 16,
     "titulo": "Bons Tempos: Yesteryear",
     "autor": "Cairo Clairo Burke",
     "genero": "Ficção",
@@ -256,7 +256,7 @@
     "categoria": "Livro"
   },
   {
-    "id": 20,
+    "id": 17,
     "titulo": "Quando",
     "autor": "Carla Madeira",
     "genero": "Ficção Brasileira",
@@ -272,23 +272,23 @@
     "categoria": "Livro"
   },
   {
-    "id": 21,
+    "id": 18,
     "titulo": "A Noite Das Bruxas",
     "autor": "Agatha Christie",
     "genero": "Mistério",
-    "preco": 37.85,
+    "preco": 39.12,
     "editora": "HarperCollins",
     "isbn": "8595086788",
     "edicao": "1ª",
     "paginas": 240,
     "publicacao": "2020-11-16",
     "dimensoes": "21.4 x 14.2 x 2 cm",
-    "imagem": "img/produtos/ANoiteDasBruxas.png",
+    "imagem": "img/produtos/ANoiteDasBruxas.jpg",
     "descricaoCurta": "Hercule Poirot investiga uma morte em uma festa de Dia das Bruxas.",
     "categoria": "Livro"
   },
   {
-    "id": 22,
+    "id": 19,
     "titulo": "Convite Para um Homicídio",
     "autor": "Agatha Christie",
     "genero": "Mistério",
@@ -304,7 +304,7 @@
     "categoria": "Livro"
   },
   {
-    "id": 23,
+    "id": 20,
     "titulo": "O Povo Brasileiro: A Formação e o Sentido do Brasil",
     "autor": "Darcy Ribeiro",
     "genero": "Ensaio/História",
@@ -320,7 +320,7 @@
     "categoria": "Livro"
   },
   {
-    "id": 24,
+    "id": 21,
     "titulo": "Jornada DevOps",
     "autor": "Antonio Muniz, Analia Irigoyen, Rodrigo Santos e Rodrigo Moutinho",
     "genero": "Tecnologia",
@@ -336,7 +336,7 @@
     "categoria": "Livro"
   },
   {
-    "id": 25,
+    "id": 22,
     "titulo": "Sistemas Operacionais Modernos",
     "autor": "Andrew S. Tanenbaum e Herbert Bos",
     "genero": "Tecnologia/Acadêmico",
@@ -352,7 +352,7 @@
     "categoria": "Livro"
   },
   {
-    "id": 26,
+    "id": 23,
     "titulo": "Fundamentos de HTML5 e CSS3",
     "autor": "Maurício Samy Silva",
     "genero": "Tecnologia",
@@ -368,7 +368,7 @@
     "categoria": "Livro"
   },
   {
-    "id": 27,
+    "id": 24,
     "titulo": "Sistema de Banco de Dados",
     "autor": "Rachel Reid",
     "genero": "Tecnologia",
@@ -384,9 +384,9 @@
     "categoria": "Livro"
   },
   {
-    "id": 28,
+    "id": 25,
     "titulo": "Medicina Fetal: diagnóstico pré natal e conduta",
-    "autor": "Rachel Reid",
+    "autor": "Eduardo Valente Isfer",
     "genero": "Acadêmico/Medicina",
     "preco": 1256.67,
     "editora": "Thieme Revinter",
@@ -400,7 +400,7 @@
     "categoria": "Livro"
   },
   {
-    "id": 29,
+    "id": 26,
     "titulo": "STABILO point 88 Caneta Ponta Fina - Estojo com 10 unidades - Em 10 cores",
     "marca": "Stabilo",
     "genero": "Papelaria/Canetas",
@@ -412,7 +412,7 @@
     "categoria": "Papelaria"
   },
   {
-    "id": 30,
+    "id": 27,
     "titulo": "STABILO BOSS - Marca Texto Amarelo",
     "marca": "Stabilo",
     "genero": "Papelaria/Marca-texto",
@@ -424,7 +424,7 @@
     "categoria": "Papelaria"
   },
   {
-    "id": 31,
+    "id": 28,
     "titulo": "STABILO BOSS - Marca Texto Rosa",
     "marca": "Stabilo",
     "genero": "Papelaria/Marca-texto",
@@ -436,7 +436,7 @@
     "categoria": "Papelaria"
   },
   {
-    "id": 32,
+    "id": 29,
     "titulo": "STABILO BOSS - Marca Texto Pêssego",
     "marca": "Stabilo",
     "genero": "Papelaria/Marca-texto",
@@ -448,7 +448,7 @@
     "categoria": "Papelaria"
   },
   {
-    "id": 33,
+    "id": 30,
     "titulo": "Faber-Castell Lápis De Cor Supersoft com 50 Cores",
     "marca": "Faber-Castell",
     "genero": "Papelaria/Desenho",
@@ -460,7 +460,7 @@
     "categoria": "Papelaria"
   },
   {
-    "id": 34,
+    "id": 31,
     "titulo": "CiS Lapiseira Técnica Prof - 0.7 mm - Preta - Blister c/1 unidade",
     "marca": "CiS",
     "genero": "Papelaria/Escrita",
@@ -471,4 +471,4 @@
     "descricaoCurta": "Lapiseira técnica 0.7mm com ponta retrátil e clip de metal.",
     "categoria": "Papelaria"
   }
-]
+];

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agatha Christie | Lumina Livros</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <div class="logo">Lumina</div>
+    <div class="area-direita">
+      <nav>
+        <ul class="menu-principal">
+          <li><a href="homepage.html">Início</a></li>
+          <li><a href="catalogo.html">Catálogo</a></li>
+          <li><a href="galeria.html">Galeria</a></li>
+          <li><a href="resenhas.html">Resenhas</a></li>
+          <li><a href="empresa.html">Empresa</a></li>
+          <li><a href="documento.html">Documentos</a></li>
+        </ul>
+      </nav>
+      <button id="botao-carrinho-header" class="botao-carrinho-header" aria-label="Abrir carrinho de compras">
+        <span aria-hidden="true">🛒</span>
+        <span id="carrinho-contador" class="carrinho-contador">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== PAINEL DO CARRINHO (Req 17: carrinho de compras básico) ===== -->
+  <aside id="painel-carrinho" class="painel-carrinho">
+    <div class="painel-carrinho-topo">
+      <h2>Seu Carrinho</h2>
+      <button id="botao-fechar-carrinho" class="botao-fechar-carrinho" aria-label="Fechar carrinho">×</button>
+    </div>
+    <ul id="carrinho-lista" class="carrinho-lista">
+      <!-- Preenchido dinamicamente por js/carrinho.js -->
+    </ul>
+    <div class="painel-carrinho-rodape">
+      <div class="carrinho-total-linha">
+        <span>Total</span>
+        <strong id="carrinho-total">R$ 0,00</strong>
+      </div>
+      <button id="botao-finalizar-compra" class="botao">Finalizar Compra</button>
+      <button id="botao-esvaziar-carrinho" class="botao botao-secundario">Esvaziar carrinho</button>
+    </div>
+  </aside>
+  <div id="fundo-carrinho" class="fundo-carrinho"></div>
+
+  <!-- ===== TOPO DA PÁGINA (segue a promoção "Aniversário da Rainha do Crime") ===== -->
+  <section class="container" style="padding-top: var(--espaco-lg);">
+    <div class="banner-inicial">
+      <h1>Agatha Christie</h1>
+      <p class="lema">A Rainha do Crime</p>
+      <p class="subtitulo">
+        Todos os títulos da autora disponíveis na Lumina, em comemoração ao
+        "Aniversário da Rainha do Crime". Use o cupom <strong>RAINHADOCRIME</strong>
+        e ganhe descontos progressivos: até 35% OFF na compra de 4 livros ou mais.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== GRADE DE LIVROS (Req 17: renderizado via JS a partir de produtos-dados.js) ===== -->
+  <main class="container" style="margin-top: var(--espaco-lg); margin-bottom: var(--espaco-lg);">
+    <h2>Títulos disponíveis</h2>
+    <div id="grade-agatha" class="grade-lancamentos">
+      <!-- Preenchido dinamicamente por js/agatha-christie.js -->
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <p>Ciência da Computação | Desenvolvimento Web | Turma B</p>
+    <p>João Wíctor Gomes Rodrigues de Oliveira · Leonardo Maneiro · Nathan Henrique da Silva Carvalho</p>
+  </footer>
+
+  <script src="js/produtos-dados.js"></script>
+  <script src="js/carrinho.js"></script>
+  <script src="js/agatha-christie.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
