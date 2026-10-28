@@ -1,0 +1,24 @@
+<svg viewBox="0 0 260 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logotipo Lumina Livros">
+  <!-- Ícone: livro aberto com uma centelha/faísca saindo da página -->
+  <g transform="translate(6,14)">
+    <!-- Livro aberto -->
+    <path d="M2 8 C 14 2, 26 2, 32 8 L 32 52 C 26 46, 14 46, 2 52 Z" fill="#0F172A"/>
+    <path d="M62 8 C 50 2, 38 2, 32 8 L 32 52 C 38 46, 50 46, 62 52 Z" fill="#0F172A"/>
+    <path d="M6 12 C 15 8, 24 8, 30 12 L 30 46 C 24 43, 15 43, 6 46 Z" fill="#FFFDF8"/>
+    <path d="M58 12 C 49 8, 40 8, 34 12 L 34 46 C 40 43, 49 43, 58 46 Z" fill="#FFFDF8"/>
+    <!-- linhas de texto simuladas -->
+    <line x1="10" y1="18" x2="26" y2="16" stroke="#D97706" stroke-width="1.5"/>
+    <line x1="10" y1="24" x2="26" y2="22" stroke="#D97706" stroke-width="1.5"/>
+    <line x1="10" y1="30" x2="24" y2="28" stroke="#D97706" stroke-width="1.5"/>
+    <line x1="38" y1="16" x2="54" y2="18" stroke="#D97706" stroke-width="1.5"/>
+    <line x1="38" y1="22" x2="54" y2="24" stroke="#D97706" stroke-width="1.5"/>
+    <line x1="40" y1="28" x2="54" y2="30" stroke="#D97706" stroke-width="1.5"/>
+    <!-- Faísca acima do livro -->
+    <path d="M32 -12 L36 -2 L46 -1 L38 6 L40 16 L32 10 L24 16 L26 6 L18 -1 L28 -2 Z"
+          fill="#FBBF24" stroke="#D97706" stroke-width="0.6"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="82" y="55" font-family="Georgia, 'Times New Roman', serif" font-size="34"
+        font-weight="700" fill="#0F172A">Lumina</text>
+</svg>

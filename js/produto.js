@@ -1,34 +1,33 @@
-/* ==========================================================================
-   LUMINA LIVROS — produto.js
-   Responsável: Leonardo (Req 17 - JavaScript: DOM + eventos, sem fetch).
-
-   O QUE ESSE ARQUIVO FAZ:
-   1) Lê o número depois de "?id=" na URL da página
-      (ex: produto.html?id=3  ->  id = 3)
-   2) Procura, dentro do array "produtos" (vindo de produtos-dados.js),
-      o objeto cujo campo "id" é igual a esse número.
-   3) Usa esse objeto para preencher os elementos da página (título,
-      autor, preço, imagem, descrição, lista de detalhes).
-   4) Adiciona um evento de clique num botão como exemplo de
-      "automatizar eventos" (Req 17).
-
-   IMPORTANTE: este arquivo depende de "produtos-dados.js" já ter sido
-   carregado ANTES dele no HTML (o array "produtos" precisa existir).
-   ========================================================================== */
-
-// Transforma "2020-11-09" em "09/11/2020" (formato mais comum no Brasil)
 function formatarData(dataISO) {
+  if (!dataISO) return '';
   const [ano, mes, dia] = dataISO.split('-');
   return `${dia}/${mes}/${ano}`;
 }
 
+// escreve um valor dentro de uma célula da tabela; se não houver valor, mostra "—"
+function preencherCelula(id, valor) {
+  const celula = document.querySelector('#' + id);
+  if (!celula) return;
+  if (valor === undefined || valor === null || valor === '') {
+    celula.textContent = '—';
+  } else {
+    celula.textContent = valor;
+  }
+}
+
+// Preenche o rótulo (rot-) e o dado (tab-) de uma linha da tabela
+function preencherLinha(posicao, rotulo, valor) {
+  preencherCelula('rot-' + posicao, rotulo);
+  preencherCelula('tab-' + posicao, valor);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
-  // --- 1) Pegar o "id" da URL -------------------------------------------
+  // --- 1) Pegar o "id" da URL ---
   const parametros = new URLSearchParams(window.location.search);
   const idProduto = Number(parametros.get('id'));
 
-  // --- 2) Procurar o produto correspondente no array ----------------------
+  // --- 2) Procurar o produto correspondente ---
   const produto = produtos.find((item) => item.id === idProduto);
 
   if (!produto) {
@@ -39,16 +38,16 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  // --- 3) Preencher os elementos simples da página ------------------------
+  // --- 3) Preencher dados básicos ---
   const elTitulo = document.querySelector('#titulo-produto');
   if (elTitulo) elTitulo.textContent = produto.titulo;
 
   const elAutor = document.querySelector('#autor-produto');
-  if (elAutor) elAutor.textContent = produto.autor;
+  if (elAutor) elAutor.textContent = produto.autor || '';
 
   const elPreco = document.querySelector('#preco-produto');
   if (elPreco) {
-    elPreco.textContent = 'R$ ' + produto.preco.toFixed(2).replace('.', ',');
+    elPreco.textContent = produto.preco ? 'R$ ' + produto.preco.toFixed(2).replace('.', ',') : 'Consultar valor';
   }
 
   const elImagem = document.querySelector('#imagem-produto');
@@ -62,9 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.title = produto.titulo + ' | Lumina Livros';
 
-  // --- 4) Lista "O que você precisa saber sobre este produto" -------------
-  // Monta uma lista de pares [rótulo, valor] a partir dos campos do produto
-  // e transforma cada par em um <li>.
+  // --- 4) Preencher Ficha Técnica / Detalhes ---
   const elListaDetalhes = document.querySelector('#lista-detalhes-produto');
   if (elListaDetalhes) {
     const detalhes = [
@@ -78,11 +75,47 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     elListaDetalhes.innerHTML = detalhes
+      .filter(([_, valor]) => valor !== undefined && valor !== null)
       .map(([rotulo, valor]) => `<li><strong>${rotulo}:</strong> ${valor}</li>`)
       .join('');
   }
 
-  // --- 5) Evento automatizado (Req 17): favoritar --------------------------
+  // --- 4.1) Preencher a tabela da Ficha Técnica (Req 12) ---
+  // Título, autor/marca e descrição são iguais para todos os produtos
+  preencherCelula('tab-titulo', produto.titulo);
+  preencherCelula('tab-autor', produto.autor || produto.marca);
+  preencherCelula('tab-descricao', produto.descricaoCurta);
+
+  const precoTexto = produto.preco ? 'R$ ' + produto.preco.toFixed(2).replace('.', ',') : 'Consultar valor';
+
+  // Os demais campos (rótulo + dado) mudam conforme a categoria do produto
+  if (produto.categoria === 'Livro') {
+    preencherLinha('5a', 'Idioma', produto.idioma);
+    preencherLinha('5b', 'Tipo de capa', produto.tipoCapa);
+    preencherLinha('6a', 'Editora', produto.editora);
+    preencherLinha('6b', 'Edição', produto.edicao);
+    preencherLinha('7a', 'Páginas', produto.paginas);
+    preencherLinha('7b', 'Dimensões', produto.dimensoes);
+    preencherLinha('8a', 'ISBN', produto.isbn);
+    preencherLinha('8b', 'Publicação', formatarData(produto.publicacao));
+    preencherLinha('9a', 'Preço', precoTexto);
+    preencherLinha('9b', 'Gênero', produto.genero);
+    preencherLinha('11', 'Parte da série', produto.serie);
+  } else {
+    preencherLinha('5a', 'Cor da tinta', produto.corTinta);
+    preencherLinha('5b', 'Tipo de ponta', produto.tipoPonta);
+    preencherLinha('6a', 'Formato do item', produto.formatoItem);
+    preencherLinha('6b', 'Tipo de grafite', produto.tipoGrafite);
+    preencherLinha('7a', 'Unidade', produto.unidade);
+    preencherLinha('7b', 'Dimensões', produto.dimensoes);
+    preencherLinha('8a', 'Categoria', produto.categoria);
+    preencherLinha('8b', 'Gênero', produto.genero);
+    preencherLinha('9a', 'Preço', precoTexto);
+    preencherLinha('9b', 'Cor', produto.cor);
+    preencherLinha('11', 'Uso recomendado', produto.adequacao);
+  }
+
+  // --- 5) Botão Favoritar ---
   const botaoFavoritar = document.querySelector('#botao-favoritar');
   if (botaoFavoritar) {
     botaoFavoritar.addEventListener('click', () => {
@@ -91,10 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- 6) Evento automatizado (Req 17): adicionar ao carrinho --------------
-  // Ao clicar, o botão muda de texto/cor por 2 segundos (feedback visual)
-  // e depois volta ao normal. setTimeout() agenda um código para rodar
-  // depois de um tempo (aqui, 2000 milissegundos = 2 segundos).
+  // --- 6) Botão Carrinho ---
   const botaoCarrinho = document.querySelector('#botao-carrinho');
   if (botaoCarrinho) {
     const textoOriginal = botaoCarrinho.textContent;
@@ -108,6 +138,16 @@ document.addEventListener('DOMContentLoaded', () => {
         botaoCarrinho.classList.remove('adicionado');
       }, 2000);
     });
+  }
+
+  // --- 7) Inserir o Texto Completo da Resenha diretamente na página ---
+  const elTextoResenha = document.querySelector('#texto-resenha-completa');
+  if (elTextoResenha) {
+    if (produto.categoria === 'Papelaria' || !produto.resenhaCompleta) {
+      elTextoResenha.innerHTML = '<p>Este produto não possui uma resenha cadastrada.</p>';
+    } else {
+      elTextoResenha.innerHTML = produto.resenhaCompleta;
+    }
   }
 
 });

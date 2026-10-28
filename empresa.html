@@ -9,7 +9,9 @@
 <body>
 
   <header class="cabecalho">
-    <div class="logo">Lumina</div>
+    <a href="homepage.html" class="logo">
+      <img src="img/logo/lumina-logo.svg" alt="Lumina Livros">
+    </a>
     <nav>
       <ul class="menu-principal">
         <li><a href="homepage.html">Início</a></li>
@@ -22,17 +24,128 @@
     </nav>
   </header>
 
-  <main class="container" style="padding-top: var(--espaco-md);">
+  <main class="container" style="padding-top: var(--espaco-md); padding-bottom: var(--espaco-lg);">
     <h1>Sobre a Lumina</h1>
     <p><em>"Lumina: Onde cada página acende uma ideia."</em></p>
 
-    <!-- TODO Nathan (Req 2): responder as 17 perguntas do briefing.
-         Sugestão de estrutura: uma <section> por pergunta, com
-         <h3>pergunta</h3><p>resposta</p> -->
-
-    <section>
+    <section class="briefing">
       <h2>Briefing</h2>
-      <!-- 1 a 17 aqui -->
+
+      <article class="pergunta-briefing">
+        <h3>1. Ramo de atuação da empresa e tempo de mercado</h3>
+        <p>Comércio varejista especializado em livros, materiais de papelaria, itens para escritório e presentes criativos. Temos 7 anos de atuação.</p>
+      </article>
+
+      <article class="pergunta-briefing">
+        <h3>2. Número de filiais/franquias</h3>
+        <p>Estamos atuando, por enquanto, em 4 estados do Brasil: Brasília, Rio de Janeiro, São Paulo e Curitiba. Com 5 filiais em Brasília, 6 no Rio de Janeiro, 12 em São Paulo e 2 em Curitiba, totalizando 25 filiais.</p>
+      </article>
+
+      <article class="pergunta-briefing">
+        <h3>3. Produtos e/ou serviços oferecidos</h3>
+        <p>Oferecemos em nossa loja livros e itens de papelaria. Na área de livros, temos de todos os gêneros: ficção, suspense, biografias e acadêmicos. Já na área de papelaria, temos canetas, marca-textos, marcadores de atividades, cadernos e outros itens variados.</p>
+      </article>
+
+      <article class="pergunta-briefing">
+        <h3>4. Endereço do site atual</h3>
+        <p>Localhost</p>
+      </article>
+
+      <article class="pergunta-briefing">
+        <h3>5. Vantagens/desvantagens sobre os concorrentes</h3>
+        <p><strong>Vantagens:</strong></p>
+        <ul>
+          <li><strong>Curadoria exclusiva:</strong> seleção criteriosa de títulos independentes e papelaria artesanal/importada que não são encontrados em grandes redes.</li>
+          <li><strong>Atendimento personalizado:</strong> equipe treinada para oferecer recomendações sob medida, além de um espaço físico com café integrativo.</li>
+          <li><strong>Programa de fidelidade atrativo:</strong> descontos progressivos e brindes exclusivos para clientes frequentes.</li>
+        </ul>
+        <p><strong>Desvantagens:</strong></p>
+        <ul>
+          <li><strong>Preço do frete e logística:</strong> prazos de entrega mais longos no e-commerce em comparação com gigantes do varejo online.</li>
+          <li><strong>Poder de negociação:</strong> volume de compra menor com editoras e fabricantes, o que limita a margem para dar grandes descontos.</li>
+          <li><strong>Menor orçamento de marketing:</strong> menos capital para campanhas publicitárias de grande alcance nacional.</li>
+        </ul>
+      </article>
+
+      <article class="pergunta-briefing">
+        <h3>6. Referências de sites (outras empresas)</h3>
+        <p>Amazon, Leitura e Mercado Livre.</p>
+      </article>
+
+      <article class="pergunta-briefing">
+        <h3>7. Objetivos a serem alcançados</h3>
+        <p>Satisfazer as necessidades dos nossos clientes e atender a todos os pedidos, com envio rápido e sem muita burocracia.</p>
+      </article>
+
+      <article class="pergunta-briefing">
+        <h3>8. Público-alvo</h3>
+        <p>Temos como público-alvo todas as pessoas que gostam de ler, de passar um tempo longe das redes sociais, de boas histórias e que gostam de expressar de forma artística suas ideias.</p>
+      </article>
+
+      <article class="pergunta-briefing">
+        <h3>9. Conteúdo do site</h3>
+        <p>O conteúdo do nosso site consiste em área separada para livros com diferentes temáticas, conteúdo de papelaria, área de ajuda, função de favoritar os livros, descontos e facilidade de navegação.</p>
+      </article>
+
+      <article class="pergunta-briefing">
+        <h3>10. Imagem a ser transmitida para os usuários</h3>
+        <p><strong>Estilo e Conceito:</strong> equilíbrio entre tradição acolhedora e modernidade (conceito <em>warm modern</em>), transmitindo sofisticação sem perder o toque humano e convidativo.</p>
+        <p><strong>Layout:</strong> clean, organizado e funcional, garantindo uma navegação leve tanto no ambiente físico quanto no digital, sem ser frio ou impessoal.</p>
+        <p><strong>Cores adequadas:</strong> tons terrosos e quentes (como verde-musgo, terracota e mostarda) combinados com uma base neutra de bege ou off-white, estimulando a criatividade e o aconchego.</p>
+        <p><strong>Percepção desejada:</strong> uma marca de confiança, culturalmente ativa, criativa e atenciosa aos detalhes.</p>
+      </article>
+
+      <article class="pergunta-briefing">
+        <h3>11. Documentação disponível (logotipo, folders, manuais etc.)</h3>
+        <p>Documento de Planejamento - Lumina (Google Docs).</p>
+      </article>
+
+      <article class="pergunta-briefing">
+        <h3>12. Tecnologias ou linguagens desejadas</h3>
+        <p>HTML5, CSS e JavaScript.</p>
+      </article>
+
+      <article class="pergunta-briefing">
+        <h3>13. Ferramentas de marketing utilizadas atualmente</h3>
+        <!-- Pergunta não respondida no briefing original — rascunho a
+             confirmar com o grupo, coerente com o público-alvo (Q8) e
+             a proposta de curadoria/atendimento (Q5). -->
+        <p>Divulgação orgânica em redes sociais (Instagram e TikTok), parcerias com influenciadores literários (bookstagrammers) e newsletter por e-mail com lançamentos, resenhas e promoções.</p>
+      </article>
+
+      <article class="pergunta-briefing">
+        <h3>14. Objeções (não utilizar a cor x ou o estilo y etc.)</h3>
+        <!-- Pergunta não respondida no briefing original — rascunho a
+             confirmar com o grupo, coerente com o conceito "warm modern"
+             e a paleta definida na Q10. -->
+        <p>Evitar tons frios/clínicos (como cinza puro ou azul corporativo), tipografia excessivamente futurista e qualquer estética genérica de loja de departamento — a identidade deve manter sempre o acolhimento e o toque humano da marca.</p>
+      </article>
+
+      <article class="pergunta-briefing">
+        <h3>15. Mínimo e máximo de verba disponível para o projeto</h3>
+        <p><strong>Mínimo:</strong> R$ 5.000,00<br><strong>Máximo:</strong> R$ 12.000,00</p>
+      </article>
+
+      <article class="pergunta-briefing">
+        <h3>16. Prazo para desenvolvimento e/ou cronograma</h3>
+        <p><strong>Prazo total:</strong> 45 dias corridos.</p>
+        <p>Cronograma prévio:</p>
+        <ol>
+          <li><em>Dias 1 a 15:</em> Imersão, diagnóstico e estratégia de marca.</li>
+          <li><em>Dias 16 a 30:</em> Desenvolvimento de identidade visual e peças de teste.</li>
+          <li><em>Dias 31 a 45:</em> Revisões, ajustes finais e entrega dos manuais/arquivos.</li>
+        </ol>
+      </article>
+
+      <article class="pergunta-briefing">
+        <h3>17. Contato (Nome/tel/e-mail)</h3>
+        <ul>
+          <li>Nathan Henrique — nathan.henrique@sempreceub.com</li>
+          <li>João Wíctor — joao.wictor@sempreceub.com</li>
+          <li>Leonardo Maneiro — leonardo.maneiro@sempreceub.com</li>
+        </ul>
+      </article>
+
     </section>
   </main>
 

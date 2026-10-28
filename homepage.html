@@ -8,9 +8,11 @@
 </head>
 <body>
 
-  <!-- ===== CABEÇALHO / MENU (Req 3: mínimo 5 itens) ===== -->
+  <!-- ===== menu (req 3: mínimo 5 itens) ===== -->
   <header class="cabecalho">
-    <div class="logo">Lumina</div>
+    <a href="homepage.html" class="logo">
+      <img src="img/logo/lumina-logo.svg" alt="Lumina Livros">
+    </a>
     <nav>
       <ul class="menu-principal">
         <li><a href="homepage.html" class="ativo">Início</a></li>
@@ -23,7 +25,7 @@
     </nav>
   </header>
 
-  <!-- ===== BANNER "Faísca Literária" ===== -->
+  <!-- ===== banner ===== -->
   <section class="container" style="padding-top: var(--espaco-lg);">
     <div class="banner-inicial">
       <h1>Faísca Literária</h1>
@@ -36,24 +38,23 @@
     </div>
   </section>
 
-  <!-- ===== SEÇÃO LANÇAMENTOS (Req 17: renderizado via JS a partir de produtos-dados.js) ===== -->
+  <!-- ===== lançamentos ===== -->
   <section class="container" style="margin-top: var(--espaco-lg);">
     <div class="secao-titulo">
       <h2>Lançamentos</h2>
       <a href="catalogo.html">Ver todos →</a>
     </div>
     <div id="grade-lancamentos" class="grade-lancamentos">
-      <!-- Preenchido dinamicamente por js/homepage.js -->
+      <!-- preenchido por js/homepage.js -->
     </div>
   </section>
 
-  <!-- ===== PROPAGANDAS (Req 11: mínimo 4 propagandas de patrocinadores) =====
-       Cada banner leva direto para a página do produto anunciado. -->
+  <!-- ===== propagandas (req 11: 4 propagandas de patrocinadores) ===== -->
   <section class="container" style="margin-top: var(--espaco-lg);">
     <h2>Ofertas em destaque</h2>
     <div class="grade-patrocinadores">
-      <!-- Promoção de coleção: leva para a página exclusiva com todos os títulos da autora -->
-      <a class="propaganda" href="agatha-christie.html">
+      <!-- promoção de colecao -->
+      <a class="propaganda" href="paginas-produtos/produto.html?id=8">
         <img src="img/banners/AgathaBanner.jpg" alt="Propaganda HarperCollins: Aniversário da Rainha do Crime, até 35% OFF em livros de Agatha Christie">
       </a>
       <a class="propaganda" href="paginas-produtos/produto.html?id=16">
@@ -62,13 +63,13 @@
       <a class="propaganda" href="paginas-produtos/produto.html?id=17">
         <img src="img/banners/CarlaBanner.jpg" alt="Propaganda Record: novo livro de Carla Madeira, Quando, garanta já o seu exemplar">
       </a>
-      <a class="propaganda" href="stabilo.html" target="_blank" rel="noopener">
+      <a class="propaganda" href="paginas-produtos/produto.html?id=27" target="_blank" rel="noopener">
         <img src="img/banners/StabilloBanner.jpg" alt="Propaganda Stabilo: adquira já sua Stabillo Boss rosa">
       </a>
     </div>
   </section>
 
-  <!-- ===== MARCAS PARCEIRAS (logos) ===== -->
+  <!-- ===== marcas parceiras ===== -->
   <section class="container" style="margin-top: var(--espaco-lg); margin-bottom: var(--espaco-lg);">
     <h2>Nossos Parceiros</h2>
     <div class="grade-logos-parceiros">
@@ -81,7 +82,6 @@
     </div>
   </section>
 
-  <!-- ===== RODAPÉ PADRÃO ===== -->
   <footer class="rodape">
     <p>Ciência da Computação | Desenvolvimento Web | Turma B</p>
     <p>João Wíctor Gomes Rodrigues de Oliveira · Leonardo Maneiro · Nathan Henrique da Silva Carvalho</p>

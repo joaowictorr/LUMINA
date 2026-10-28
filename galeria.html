@@ -7,7 +7,7 @@
   <title>Galeria | Lumina Livros</title>
   <link rel="stylesheet" href="css/main.css">
   <style>
-    /* Estilo específico desta página: grid de 3 colunas (Req 4) */
+    /* estilo da pag galeria: grid de 3 colunas (req 4) */
     .galeria-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -51,7 +51,7 @@
       color: var(--cor-texto);
     }
 
-    /* Responsividade: 2 colunas em tablet, 1 em celular (Req 16) */
+    /* responsividade: 2 colunas em tablet, 1 em celular (req 16) */
     @media (max-width: 900px) {
       .galeria-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -69,7 +69,9 @@
 <body>
 
   <header class="cabecalho">
-    <div class="logo">Lumina</div>
+    <a href="homepage.html" class="logo">
+      <img src="img/logo/lumina-logo.svg" alt="Lumina Livros">
+    </a>
     <nav>
       <ul class="menu-principal">
         <li><a href="homepage.html">Início</a></li>
@@ -171,7 +173,7 @@
           <img src="img/galeria/JornadaDevOps.jpg" alt="Capa do livro Jornada DevOps">
           <figcaption>Jornada DevOps</figcaption>
         </figure>
-        <figure class="item-estudo-galeria">
+        <figure class="item-galeria">
           <img src="img/galeria/SistemasOperacionaisModernos.jpg" alt="Capa do livro Sistemas Operacionais Modernos">
           <figcaption>Sistemas Operacionais Modernos</figcaption>
         </figure>

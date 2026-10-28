@@ -9,7 +9,9 @@
 <body>
 
   <header class="cabecalho">
-    <div class="logo">Lumina</div>
+    <a href="homepage.html" class="logo">
+      <img src="img/logo/lumina-logo.svg" alt="Lumina Livros">
+    </a>
     <nav>
       <ul class="menu-principal">
         <li><a href="homepage.html">Início</a></li>
@@ -24,18 +26,212 @@
 
   <main class="container" style="padding-top: var(--espaco-md);">
     <h1>Documentação do Projeto</h1>
+    <p class="subtitulo-pagina">
+      Central técnica do site Lumina Livros: visão geral do projeto, arquitetura de arquivos,
+      wireframes de todas as páginas e o mapeamento de cada requisito do Mini Projeto Front-End.
+    </p>
 
-    <!-- TODO Leonardo (Req 8): inserir os wireframes de todas as páginas.
-         Podem ser imagens (<img>) ou embeds de PDF. -->
-    <section>
-      <h2>Wireframes</h2>
+    <!-- ===== 1. VISÃO GERAL ===== -->
+    <section style="margin-top: var(--espaco-lg);">
+      <h2>1. Visão Geral</h2>
+      <p>
+        <strong>Lumina Livros</strong> é uma livraria e papelaria online desenvolvida como Mini Projeto
+        da disciplina Desenvolvimento Web (Ciência da Computação, UniCEUB). O site foi construído
+        inteiramente com <strong>HTML5, CSS3 e JavaScript puro</strong> — sem frameworks, bibliotecas
+        externas ou back-end — conforme as restrições da disciplina.
+      </p>
+      <p style="margin-top: var(--espaco-sm);">
+        <em>Lema: "Lumina: Onde cada página acende uma ideia."</em>
+      </p>
     </section>
 
-    <!-- Espaço de apoio: link para o PDF do planejamento, se quiser
-         disponibilizar aqui também -->
-    <section>
-      <h2>Planejamento</h2>
-      <a href="documentos/Documento_de_Planejamento_LUMINA.pdf">Ver Documento de Planejamento (PDF)</a>
+    <!-- ===== 2. ARQUITETURA DE ARQUIVOS ===== -->
+    <section style="margin-top: var(--espaco-lg);">
+      <h2>2. Arquitetura de Arquivos</h2>
+      <dl class="lista-arquitetura">
+        <dt>homepage.html</dt>
+        <dd>Página inicial: banner "Faísca Literária", lançamentos, propagandas de patrocinadores e logos parceiros.</dd>
+
+        <dt>catalogo.html</dt>
+        <dd>Listagem completa dos produtos, com filtros por gênero, rankings e os 10 links de sites externos.</dd>
+
+        <dt>galeria.html</dt>
+        <dd>Galeria com as capas de livros organizadas em grade de 3 colunas.</dd>
+
+        <dt>resenhas.html</dt>
+        <dd>Página de texto longo com resenhas e navegação por âncora (índice + link de retorno ao topo).</dd>
+
+        <dt>empresa.html</dt>
+        <dd>Página institucional com as respostas do briefing de 17 questões.</dd>
+
+        <dt>documento.html</dt>
+        <dd>Esta página: documentação técnica, wireframes e mapeamento de requisitos.</dd>
+
+        <dt>paginas-produtos/produto.html</dt>
+        <dd>Template único de produto, preenchido dinamicamente via JavaScript a partir do parâmetro <code>?id=</code> na URL.</dd>
+
+        <dt>js/produtos-dados.js</dt>
+        <dd>Base de dados dos 31 produtos (livros e papelaria), usada por todas as páginas dinâmicas.</dd>
+
+        <dt>css/main.css</dt>
+        <dd>Folha de estilo global: variáveis de design, layout do cabeçalho/rodapé e estilos de cada seção.</dd>
+
+        <dt>img/</dt>
+        <dd>Imagens do site, organizadas em subpastas: <code>produtos/</code>, <code>banners/</code> e <code>editoras/</code>.</dd>
+      </dl>
+    </section>
+
+    <!-- ===== 3. WIREFRAMES (Req 8) ===== -->
+    <section style="margin-top: var(--espaco-lg);">
+      <h2>3. Wireframes</h2>
+      <p style="margin-bottom: var(--espaco-md);">
+        Esboços de baixa fidelidade das páginas do site.
+      </p>
+
+      <div class="grade-wireframes">
+
+        <!-- Wireframe: Homepage -->
+        <figure class="wireframe-card">
+          <img class="wireframe-svg" src="img/wireframes/homepage.png" alt="Wireframe: homepage.html">
+          <figcaption>homepage.html</figcaption>
+        </figure>
+
+        <!-- Wireframe: Catálogo -->
+        <figure class="wireframe-card">
+          <img class="wireframe-svg" src="img/wireframes/catalogo.png" alt="Wireframe: catalogo.html">
+          <figcaption>catalogo.html</figcaption>
+        </figure>
+
+        <!-- Wireframe: Galeria -->
+        <figure class="wireframe-card">
+          <img class="wireframe-svg" src="img/wireframes/galeria.png" alt="Wireframe: galeria.html">
+          <figcaption>galeria.html</figcaption>
+        </figure>
+
+        <!-- Wireframe: Resenhas -->
+        <figure class="wireframe-card">
+          <img class="wireframe-svg" src="img/wireframes/resenhas.png" alt="Wireframe: resenhas.html">
+          <figcaption>resenhas.html</figcaption>
+        </figure>
+
+        <!-- Wireframe: Empresa -->
+        <figure class="wireframe-card">
+          <img class="wireframe-svg" src="img/wireframes/empresa.png" alt="Wireframe: empresa.html">
+          <figcaption>empresa.html</figcaption>
+        </figure>
+
+        <!-- Wireframe: Documento (esta página) -->
+        <figure class="wireframe-card">
+          <img class="wireframe-svg" src="img/wireframes/documento.png" alt="Wireframe: documento.html">
+          <figcaption>documento.html</figcaption>
+        </figure>
+
+        <!-- Wireframe: Produto -->
+        <figure class="wireframe-card">
+          <img class="wireframe-svg" src="img/wireframes/produto.png" alt="Wireframe: paginas-produtos/produto.html">
+          <figcaption>paginas-produtos/produto.html</figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+    <!-- ===== 4. DOCUMENTAÇÃO DISPONÍVEL ===== -->
+    <section style="margin-top: var(--espaco-lg);">
+      <h2>4. Documentação Disponível (Logotipo, Folder e Manual de Marca)</h2>
+      <p style="margin-bottom: var(--espaco-md);">
+        Materiais de identidade visual prontos para uso em qualquer peça da Lumina — no site,
+        em impressos ou em apresentações.
+      </p>
+
+      <div class="grade-materiais">
+
+        <!-- Logotipo -->
+        <article class="card-material">
+          <h3>Logotipo</h3>
+          <div class="preview-logo">
+            <img src="img/logo/lumina-logo.svg" alt="Logotipo Lumina Livros (ícone + nome)">
+          </div>
+          <p>Versão completa (ícone + nome) e versão apenas do ícone, para espaços reduzidos.</p>
+          <ul class="lista-downloads">
+            <li><a href="img/logo/lumina-logo.svg" download>↓ Logotipo completo (.svg)</a></li>
+            <li><a href="img/logo/lumina-icone.svg" download>↓ Ícone isolado (.svg)</a></li>
+          </ul>
+        </article>
+
+        <!-- Manual de marca -->
+        <article class="card-material">
+          <h3>Manual de Marca</h3>
+          <p>Paleta de cores e tipografia oficiais, já em uso em todas as páginas do site.</p>
+
+          <p style="margin-top: var(--espaco-sm); font-weight:600;">Paleta de cores</p>
+          <div class="paleta-cores">
+            <div class="cor-amostra"><span style="background:#FFFDF8; border:1px solid #ddd;"></span>Creme Suave<br><code>#FFFDF8</code></div>
+            <div class="cor-amostra"><span style="background:#0F172A;"></span>Azul Marinho<br><code>#0F172A</code></div>
+            <div class="cor-amostra"><span style="background:#FBBF24;"></span>Âmbar<br><code>#FBBF24</code></div>
+            <div class="cor-amostra"><span style="background:#D97706;"></span>Dourado<br><code>#D97706</code></div>
+          </div>
+
+          <p style="margin-top: var(--espaco-sm); font-weight:600;">Tipografia</p>
+          <p style="font-family: var(--fonte-titulo); font-size: 1.3rem;">Playfair Display — títulos (h1, h2)</p>
+          <p style="font-family: var(--fonte-corpo);">Inter — corpo de texto (p)</p>
+        </article>
+
+        <!-- Folder institucional -->
+        <article class="card-material">
+          <h3>Folder Institucional</h3>
+          <p>Peça de uma página com apresentação da marca, pronta para impressão ou envio digital.</p>
+          <a class="botao" href="documentos/Folder-Institucional-Lumina.pdf" download>↓ Baixar folder (PDF)</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== 5. REQUISITOS ATENDIDOS ===== -->
+    <section style="margin-top: var(--espaco-lg);">
+      <h2>5. Requisitos Atendidos</h2>
+      <table class="tabela-requisitos">
+        <caption style="text-align:left; margin-bottom: var(--espaco-xs);">
+          Mapeamento entre os requisitos do Mini Projeto e onde cada um foi implementado
+        </caption>
+        <thead>
+          <tr><th>Req.</th><th>Descrição</th><th>Onde está</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2</td><td>Briefing de 17 questões</td><td>empresa.html</td></tr>
+          <tr><td>3</td><td>Menu com mínimo 5 itens</td><td>Cabeçalho, todas as páginas</td></tr>
+          <tr><td>4</td><td>Mín. 25 fotos, 3 colunas, mesmo tamanho</td><td>galeria.html (28 capas)</td></tr>
+          <tr><td>5</td><td>Fundo sem repetição de imagem</td><td>css/main.css (banner-inicial usa degradê, não imagem)</td></tr>
+          <tr><td>6</td><td>Texto longo com link de âncora (14 seções)</td><td>resenhas.html</td></tr>
+          <tr><td>7</td><td>Todos os tipos de lista (ol, ul, dl) + type</td><td>catalogo.html</td></tr>
+          <tr><td>8</td><td>Wireframes de todas as páginas</td><td>documento.html (esta página)</td></tr>
+          <tr><td>9</td><td>Formatos de texto (negrito, itálico, citação etc.)</td><td>resenhas.html / produto.html</td></tr>
+          <tr><td>10</td><td>10 links para sites externos</td><td>catalogo.html</td></tr>
+          <tr><td>11</td><td>Mín. 4 propagandas de patrocinadores</td><td>homepage.html</td></tr>
+          <tr><td>12</td><td>Tabela 5×15 com mesclagens e cores</td><td>paginas-produtos/produto.html</td></tr>
+          <tr><td>16</td><td>CSS em todas as páginas + responsividade</td><td>css/main.css</td></tr>
+          <tr><td>17</td><td>JavaScript: eventos, filtros, DOM</td><td>js/*.js (catalogo.js, produto.js, homepage.js)</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ===== 5. DIVISÃO DE RESPONSABILIDADES ===== -->
+    <section style="margin: var(--espaco-lg) 0;">
+      <h2>6. Divisão de Responsabilidades</h2>
+      <dl class="lista-arquitetura">
+        <dt>João Wíctor Gomes Rodrigues de Oliveira</dt>
+        <dd>Design & identidade visual, tratamento de imagens, homepage.html e galeria.html.</dd>
+
+        <dt>Nathan Henrique da Silva Carvalho</dt>
+        <dd>Briefing/empresa.html, ficha técnica (tabela) e catalogo.html.</dd>
+
+        <dt>Leonardo Maneiro</dt>
+        <dd>CSS global, JavaScript (produtos-dados.js, filtros, eventos) e documentação técnica.</dd>
+      </dl>
+    </section>
+
+    <section style="margin-bottom: var(--espaco-lg);">
+      <h2>7. Planejamento</h2>
+      <a href="documentos/DocumentoDePlanejamento.pdf">Ver Documento de Planejamento (PDF)</a>
     </section>
   </main>
 

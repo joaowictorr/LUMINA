@@ -1,28 +1,15 @@
-/* ==========================================================================
-   LUMINA LIVROS — homepage.js
-   Responsável: Leonardo (Req 17 - JavaScript: DOM + array, sem fetch).
-
-   O QUE ESSE ARQUIVO FAZ:
-   1) Pega o array "produtos" (vindo de produtos-dados.js, que precisa ser
-      carregado ANTES deste script no homepage.html).
-   2) Filtra apenas os livros (categoria "Livro") e ordena pela data de
-      publicação, do mais novo pro mais antigo.
-   3) Pega os 4 primeiros e monta um "card" de livro para cada um dentro
-      da seção "Lançamentos".
-   ========================================================================== */
-
-// Recebe "2026-08-14" e devolve "14/08/2026"
+// recebe "2026-08-14" e devolve "14/08/2026"
 function formatarDataLancamento(dataISO) {
   const [ano, mes, dia] = dataISO.split('-');
   return `${dia}/${mes}/${ano}`;
 }
 
-// Recebe um número (ex: 60) e devolve "R$ 60,00"
+// recebe um número (ex: 60) e devolve "R$ 60,00"
 function formatarPrecoLancamento(preco) {
   return 'R$ ' + preco.toFixed(2).replace('.', ',');
 }
 
-// Monta o HTML de um card de lançamento a partir de um objeto "produto"
+// monta o html de um card de lançamento a partir de um objeto "produto"
 function criarCardLancamento(produto) {
   return `
     <article class="card-lancamento">
@@ -42,16 +29,15 @@ function criarCardLancamento(produto) {
 document.addEventListener('DOMContentLoaded', () => {
   const areaLancamentos = document.querySelector('#grade-lancamentos');
 
-  // Se este script for carregado em outra página (sem essa área), não faz nada
   if (!areaLancamentos) return;
 
-  // 1) Filtra só os livros que têm data de publicação preenchida
+  // 1 filtra so os livros com data de publicacao
   const livros = produtos.filter((item) => item.categoria === 'Livro' && item.publicacao);
 
-  // 2) Ordena do lançamento mais recente para o mais antigo
+  // 2 ordem do lançamento mais recente para o mais antigo
   livros.sort((a, b) => b.publicacao.localeCompare(a.publicacao));
 
-  // 3) Pega os 4 primeiros e transforma cada um em um card
+  // 3 pega os 4 primeiros e transforma cada um em um card
   const maisRecentes = livros.slice(0, 4);
   areaLancamentos.innerHTML = maisRecentes.map(criarCardLancamento).join('');
 });

@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap');
 
-/* --- 1. Variáveis de Design (Design Tokens) ---
-   Definidas conforme o Documento de Planejamento, seção 1.1 e 1.2. */
+/* --- 1. Variáveis de design (Design Tokens) --- */
 :root {
   /* Cores - fundo */
   --cor-fundo: #fff7e3;          /* Creme Suave */
@@ -84,10 +83,15 @@ h2 {
 }
 
 .logo {
-  font-family: var(--fonte-titulo);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--cor-texto-alt);
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.logo img {
+  height: 100%;
+  width: auto;
+  display: block;
 }
 
 .menu-principal {
@@ -507,5 +511,446 @@ h2 {
 
   .banner-inicial h1 {
     font-size: 2rem;
+  }
+}
+
+/* --- 11. Página de Catálogo --- */
+
+.subtitulo-pagina {
+  max-width: 640px;
+  margin-top: var(--espaco-xs);
+  color: #444;
+}
+
+/* Filtros de gênero: <ul> sem marcadores, estilizada como uma barra de botões */
+.filtros-genero {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-xs);
+}
+
+.botao-filtro {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  font-family: var(--fonte-corpo);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.botao-filtro:hover {
+  border-color: var(--cor-destaque-escuro);
+}
+
+.botao-filtro.ativo {
+  background-color: var(--cor-destaque);
+  border-color: var(--cor-destaque);
+  font-weight: 600;
+}
+
+.contador-produtos {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* A grade do catálogo reaproveita o card ".card-lancamento" da homepage,
+   só ganha mais colunas por ser uma página maior */
+.grade-catalogo {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* Mais vendidos (ol type="1") */
+.lista-mais-vendidos {
+  padding-left: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-xs);
+}
+
+.lista-mais-vendidos a:hover {
+  text-decoration: underline;
+}
+
+/* Gêneros em alta (ol type="A") */
+.lista-generos-em-alta {
+  padding-left: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.contagem-genero {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Autores em destaque (dl) */
+.lista-autores {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--espaco-xs) var(--espaco-md);
+}
+
+.lista-autores dt {
+  font-weight: 700;
+  font-family: var(--fonte-titulo);
+  color: var(--cor-texto-alt);
+}
+
+.lista-autores dd {
+  margin: 0 0 var(--espaco-sm);
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* Sites externos (Req 10): lista com marcador quadrado, para variar em
+   relação às outras listas <ul> da página (que não têm marcador) */
+.lista-sites-externos {
+  list-style-type: square;
+  padding-left: 1.4rem;
+  columns: 2;
+  gap: var(--espaco-lg);
+}
+
+.lista-sites-externos li {
+  margin-bottom: var(--espaco-xs);
+}
+
+.lista-sites-externos a:hover {
+  text-decoration: underline;
+}
+
+/* Responsivo (Req 16): catálogo se ajusta em telas menores */
+@media (max-width: 1000px) {
+  .grade-catalogo {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .grade-catalogo {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .lista-autores {
+    grid-template-columns: 1fr;
+  }
+
+  .lista-sites-externos {
+    columns: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .grade-catalogo {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- 12. Página de Documentação --- */
+
+/* dl usada para "Arquitetura de Arquivos" e "Divisão de Responsabilidades":
+   nome do arquivo/pessoa em destaque, descrição logo abaixo */
+.lista-arquitetura {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-xs);
+}
+
+.lista-arquitetura dt {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  color: var(--cor-texto-alt);
+  background-color: var(--cor-fundo-alt);
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.lista-arquitetura dd {
+  margin: 0.2rem 0 var(--espaco-sm);
+  color: #444;
+}
+
+/* Grade de wireframes (Req 8) */
+.grade-wireframes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espaco-md);
+}
+
+.wireframe-card {
+  border: 1px solid #ddd;
+  border-radius: var(--raio-padrao);
+  background-color: #fff;
+  box-shadow: var(--sombra-suave);
+  overflow: hidden;
+}
+
+.wireframe-svg {
+  width: 100%;
+  display: block;
+  background-color: #fcfcfa;
+}
+
+.wireframe-card figcaption {
+  padding: var(--espaco-xs) var(--espaco-sm);
+  font-size: 0.8rem;
+  font-family: monospace;
+  color: #555;
+  border-top: 1px solid #eee;
+}
+
+/* Tabela de requisitos atendidos */
+.tabela-requisitos {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.tabela-requisitos th,
+.tabela-requisitos td {
+  border: 1px solid #ddd;
+  padding: 0.5rem 0.7rem;
+  text-align: left;
+}
+
+.tabela-requisitos th {
+  background-color: var(--cor-fundo-alt);
+  font-family: var(--fonte-titulo);
+}
+
+.tabela-requisitos tbody tr:nth-child(even) {
+  background-color: #fdfdf9;
+}
+
+/* Responsivo (Req 16) */
+@media (max-width: 900px) {
+  .grade-wireframes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .grade-wireframes {
+    grid-template-columns: 1fr;
+  }
+
+  .tabela-requisitos {
+    font-size: 0.78rem;
+  }
+}
+
+/* --- 13. Documentação Disponível (logotipo, manual, folder) --- */
+
+.grade-materiais {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espaco-md);
+  align-items: start;
+}
+
+.card-material {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: var(--raio-padrao);
+  box-shadow: var(--sombra-suave);
+  padding: var(--espaco-md);
+}
+
+.card-material h3 {
+  margin-bottom: var(--espaco-xs);
+}
+
+.card-material p {
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: var(--espaco-xs);
+}
+
+.preview-logo {
+  background-color: var(--cor-fundo-alt);
+  border-radius: var(--raio-padrao);
+  padding: var(--espaco-md);
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--espaco-sm);
+}
+
+.preview-logo img {
+  max-width: 100%;
+  height: 60px;
+}
+
+.lista-downloads {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.lista-downloads a {
+  font-size: 0.85rem;
+  color: var(--cor-destaque-escuro);
+  font-weight: 600;
+}
+
+.lista-downloads a:hover {
+  text-decoration: underline;
+}
+
+.paleta-cores {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--espaco-xs);
+  margin-bottom: var(--espaco-sm);
+}
+
+.cor-amostra {
+  font-size: 0.75rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.cor-amostra span {
+  display: block;
+  width: 100%;
+  height: 28px;
+  border-radius: 4px;
+  margin-bottom: 0.2rem;
+}
+
+.card-material .botao {
+  display: inline-block;
+  margin-top: var(--espaco-xs);
+}
+
+/* Responsivo (Req 16) */
+@media (max-width: 900px) {
+  .grade-materiais {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- 14. Página da Empresa (Briefing - Req 2) --- */
+.pergunta-briefing {
+  margin-bottom: var(--espaco-lg);
+  padding-bottom: var(--espaco-md);
+  border-bottom: 1px solid #eee;
+}
+
+.pergunta-briefing h3 {
+  color: var(--cor-destaque-escuro);
+  margin-bottom: var(--espaco-xs);
+}
+
+/* --- 15. Tabela da Ficha Técnica (Req 12) --- */
+.tabela-rolagem {
+  overflow-x: auto;
+  margin-bottom: var(--espaco-lg);
+}
+
+.tabela-ficha {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela-ficha caption {
+  text-align: left;
+  margin-bottom: var(--espaco-xs);
+}
+
+.tabela-ficha th,
+.tabela-ficha td {
+  border: 1px solid #999;
+  padding: 0.5rem 0.7rem;
+  text-align: left;
+}
+
+.tabela-ficha td[rowspan] {
+  text-align: center;
+  font-weight: 600;
+}
+
+/* --- 16. Guia de leitura da página de Resenhas (Req 9) --- */
+.guia-leitura {
+  max-width: 720px;
+  margin: 0 auto var(--espaco-lg);
+  padding: var(--espaco-md) var(--espaco-lg);
+  background-color: #fffefb;
+  border-radius: var(--raio-padrao);
+  box-shadow: var(--sombra-suave);
+}
+
+.guia-leitura h3,
+.guia-leitura h4 {
+  font-family: var(--fonte-titulo);
+  margin: var(--espaco-sm) 0 var(--espaco-xs);
+}
+
+.guia-leitura p {
+  margin-bottom: var(--espaco-sm);
+}
+
+.guia-leitura hr {
+  border: none;
+  border-top: 2px solid var(--cor-destaque);
+  margin: var(--espaco-md) 0;
+}
+
+.guia-leitura blockquote {
+  border-left: 4px solid var(--cor-destaque-escuro);
+  background-color: var(--cor-fundo-alt);
+  padding: var(--espaco-sm) var(--espaco-md);
+  margin: var(--espaco-md) 0;
+  font-style: italic;
+}
+
+.texto-pequeno { font-size: 0.8rem; }
+.texto-grande { font-size: 1.4rem; }
+.fonte-serifada { font-family: Georgia, serif; }
+.fonte-mono { font-family: 'Courier New', monospace; }
+
+/* --- 17. Guia rápido do Catálogo: listas com diversos types (Req 7) --- */
+.grade-guia {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espaco-md);
+}
+
+.bloco-guia {
+  background-color: #fffefb;
+  border-radius: var(--raio-padrao);
+  box-shadow: var(--sombra-suave);
+  padding: var(--espaco-md);
+}
+
+.bloco-guia h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--espaco-xs);
+}
+
+.bloco-guia ol,
+.bloco-guia ul {
+  padding-left: 1.6rem;
+}
+
+@media (max-width: 900px) {
+  .grade-guia {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .grade-guia {
+    grid-template-columns: 1fr;
+  }
+
+  .guia-leitura {
+    padding: var(--espaco-md);
   }
 }

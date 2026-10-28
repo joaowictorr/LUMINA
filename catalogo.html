@@ -9,7 +9,9 @@
 <body>
 
   <header class="cabecalho">
-    <div class="logo">Lumina</div>
+    <a href="homepage.html" class="logo">
+      <img src="img/logo/lumina-logo.svg" alt="Lumina Livros">
+    </a>
     <nav>
       <ul class="menu-principal">
         <li><a href="homepage.html">Início</a></li>
@@ -24,17 +26,135 @@
 
   <main class="container" style="padding-top: var(--espaco-md);">
     <h1>Catálogo</h1>
+    <p class="subtitulo-pagina">
+      Livros e papelaria selecionados pela Lumina. Use os filtros de gênero para encontrar
+      sua próxima leitura, ou explore os destaques abaixo.
+    </p>
 
-    <!-- TODO Nathan (Req 7): usar ol, ul e dl aqui, ex:
-         - ul para filtros de gênero
-         - ol para "mais vendidos"
-         - dl para lista de autores + descrição -->
+    <!-- ===== FILTROS DE GÊNERO (Req 7: lista não ordenada, sem marcadores) =====
+         Preenchida dinamicamente por catalogo.js a partir dos gêneros existentes
+         em produtos-dados.js. Clicar em um item filtra a grade abaixo. -->
+    <section style="margin-top: var(--espaco-lg);">
+      <h2>Filtrar por gênero</h2>
+      <ul id="filtros-genero" class="filtros-genero">
+        <!-- preenchido via JS -->
+      </ul>
+    </section>
 
-    <!-- TODO Nathan (Req 10): 10 links externos (lojas parceiras / resenhas) -->
+    <!-- ===== GRADE DE PRODUTOS ===== -->
+    <section style="margin-top: var(--espaco-md);">
+      <div class="secao-titulo">
+        <h2 id="titulo-grade-catalogo">Todos os produtos</h2>
+        <span id="contador-produtos" class="contador-produtos"></span>
+      </div>
+      <div id="grade-catalogo" class="grade-catalogo grade-lancamentos">
+        <!-- preenchido via JS -->
+      </div>
+    </section>
 
-    <div id="lista-catalogo">
-      <!-- TODO Leonardo (Req 17, opcional): renderizar via JS a partir de produtos.json -->
-    </div>
+    <!-- ===== MAIS VENDIDOS (Req 7: lista ordenada, type="1") =====
+         Ranking fixo, curado pela equipe (não depende de dados de vendas reais). -->
+    <section style="margin-top: var(--espaco-lg);">
+      <h2>Mais vendidos da semana</h2>
+      <ol id="lista-mais-vendidos" type="1" class="lista-mais-vendidos">
+        <!-- preenchido via JS -->
+      </ol>
+    </section>
+
+    <!-- ===== GÊNEROS EM ALTA (Req 7: lista ordenada, type="A") =====
+         Ranking dos gêneros com mais títulos no catálogo, calculado via JS. -->
+    <section style="margin-top: var(--espaco-lg);">
+      <h2>Gêneros com mais títulos</h2>
+      <ol id="lista-generos-em-alta" type="A" class="lista-generos-em-alta">
+        <!-- preenchido via JS -->
+      </ol>
+    </section>
+
+    <!-- ===== AUTORES EM DESTAQUE (Req 7: lista de definição) =====
+         dt = nome do autor · dd = quantos títulos ele(a) tem no catálogo. -->
+    <section style="margin-top: var(--espaco-lg);">
+      <h2>Autores em destaque</h2>
+      <dl id="lista-autores" class="lista-autores">
+        <!-- preenchido via JS -->
+      </dl>
+    </section>
+
+    <!-- ===== GUIA RÁPIDO (Req 7: todos os tipos de lista e os diversos "types") ===== -->
+    <section style="margin-top: var(--espaco-lg);">
+      <h2>Guia rápido da Lumina</h2>
+      <div class="grade-guia">
+        <div class="bloco-guia">
+          <h3>Como escolher seu livro</h3>
+          <ol type="a">
+            <li>Filtre por gênero</li>
+            <li>Abra a página do produto</li>
+            <li>Leia a ficha técnica e a resenha</li>
+            <li>Favorite ou adicione ao carrinho</li>
+          </ol>
+        </div>
+        <div class="bloco-guia">
+          <h3>Seções da loja</h3>
+          <ol type="I">
+            <li>Livros</li>
+            <li>Papelaria</li>
+            <li>Presentes criativos</li>
+          </ol>
+        </div>
+        <div class="bloco-guia">
+          <h3>Itens de papelaria</h3>
+          <ol type="i">
+            <li>Canetas</li>
+            <li>Marca-textos</li>
+            <li>Lápis de cor</li>
+            <li>Lapiseiras</li>
+          </ol>
+        </div>
+        <div class="bloco-guia">
+          <h3>Editoras parceiras</h3>
+          <ul type="disc">
+            <li>HarperCollins</li>
+            <li>Rocco</li>
+            <li>Companhia das Letras</li>
+          </ul>
+        </div>
+        <div class="bloco-guia">
+          <h3>Marcas de papelaria</h3>
+          <ul type="circle">
+            <li>Stabilo</li>
+            <li>Faber-Castell</li>
+            <li>CiS</li>
+          </ul>
+        </div>
+        <div class="bloco-guia">
+          <h3>Gêneros em destaque</h3>
+          <ul type="square">
+            <li>Suspense</li>
+            <li>Mistério</li>
+            <li>Tecnologia</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SITES PARCEIROS / EXTERNOS (Req 10: 10 links externos) ===== -->
+    <section style="margin: var(--espaco-lg) 0;">
+      <h2>Onde mais encontrar nossos parceiros</h2>
+      <p style="margin-bottom: var(--espaco-sm);">
+        Sites oficiais das editoras e marcas que vendemos na Lumina:
+      </p>
+      <ul class="lista-sites-externos">
+        <li><a href="https://globolivros.globo.com/" target="_blank" rel="noopener">Grupo Editorial Globo Livros</a></li>
+        <li><a href="https://rocco.com.br/" target="_blank" rel="noopener">Editora Rocco</a></li>
+        <li><a href="https://www.companhiadasletras.com.br/" target="_blank" rel="noopener">Companhia das Letras</a></li>
+        <li><a href="https://harpercollins.com.br/" target="_blank" rel="noopener">HarperCollins Brasil</a></li>
+        <li><a href="https://www.editoraarqueiro.com.br/" target="_blank" rel="noopener">Editora Arqueiro</a></li>
+        <li><a href="https://www.record.com.br/" target="_blank" rel="noopener">Editora Record</a></li>
+        <li><a href="https://www.darksidebooks.com.br/" target="_blank" rel="noopener">DarkSide Books</a></li>
+        <li><a href="https://www.lojafabercastell.com.br/" target="_blank" rel="noopener">Loja Faber-Castell</a></li>
+        <li><a href="https://www.stabilo.com/br/" target="_blank" rel="noopener">Stabilo Brasil</a></li>
+        <li><a href="https://corporate.bic.com/pt-pt" target="_blank" rel="noopener">BIC (fabricante da CiS)</a></li>
+      </ul>
+    </section>
   </main>
 
   <footer class="rodape">
@@ -42,6 +162,9 @@
     <p>João Wíctor Gomes Rodrigues de Oliveira · Leonardo Maneiro · Nathan Henrique da Silva Carvalho</p>
   </footer>
 
+  <script src="js/produtos-dados.js"></script>
+  <script src="js/catalogo.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
+

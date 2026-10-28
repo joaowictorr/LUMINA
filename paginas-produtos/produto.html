@@ -11,15 +11,17 @@
 <body>
 
   <header class="cabecalho">
-    <div class="logo">Lumina</div>
+    <a href="../homepage.html" class="logo">
+      <img src="../img/logo/lumina-logo.svg" alt="Lumina Livros">
+    </a>
     <nav>
       <ul class="menu-principal">
-        <li><a href="homepage.html">Início</a></li>
-        <li><a href="catalogo.html">Catálogo</a></li>
-        <li><a href="galeria.html">Galeria</a></li>
-        <li><a href="resenhas.html">Resenhas</a></li>
-        <li><a href="empresa.html">Empresa</a></li>
-        <li><a href="documento.html">Documentos</a></li>
+        <li><a href="../homepage.html">Início</a></li>
+        <li><a href="../catalogo.html">Catálogo</a></li>
+        <li><a href="../galeria.html">Galeria</a></li>
+        <li><a href="../resenhas.html">Resenhas</a></li>
+        <li><a href="../empresa.html">Empresa</a></li>
+        <li><a href="../documento.html">Documentos</a></li>
       </ul>
     </nav>
   </header>
@@ -59,35 +61,40 @@
 
     </section>
 
-    <!-- ===== TABELA DE DETALHES TÉCNICOS (Req 12) =====
-         5 colunas x 15 linhas, com 4 mesclagens de coluna (colspan),
-         4 mesclagens de linha (rowspan) e cores diferentes por célula.
-         Estrutura de exemplo abaixo — Nathan deve completar. -->
+    <!-- ===== TABELA DE DETALHES TÉCNICOS ===== -->
     <section>
       <h2>Ficha Técnica</h2>
-      <table id="tabela-detalhes" style="width:100%; border-collapse: collapse;">
-        <caption style="text-align:left; margin-bottom: var(--espaco-xs);">Detalhes do produto</caption>
-        <thead>
-          <tr>
-            <th colspan="5" style="background: var(--cor-destaque); padding: 8px;">Ficha do Livro</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- TODO: montar as 15 linhas restantes com colspan/rowspan
-               e cores de fundo diferentes em cada célula -->
-        </tbody>
-      </table>
+      <div class="tabela-rolagem">
+        <table id="tabela-detalhes" class="tabela-ficha">
+          <caption>Detalhes do produto: 5 colunas × 15 linhas, com mesclagens de colunas (colspan) e de linhas (rowspan)</caption>
+          <thead>
+            <tr><th style="background-color:#f2a6a6" colspan="5">Ficha Técnica do Produto</th></tr>
+            <tr><th style="background-color:#b1f4c4">Campo</th><th style="background-color:#debcf5">Dado</th><th style="background-color:#f7f1c7">Campo</th><th style="background-color:#d2f2f9">Dado</th><th style="background-color:#f2a6cf">Grupo</th></tr>
+          </thead>
+          <tbody>
+            <tr><th style="background-color:#c2f4b1">Título</th><td style="background-color:#bebcf5" colspan="3" id="tab-titulo"></td><td style="background-color:#f7d7c7" rowspan="4">Identificação</td></tr>
+            <tr><th style="background-color:#d2f9ea">Autor / Marca</th><td style="background-color:#eca6f2" colspan="3" id="tab-autor"></td></tr>
+            <tr><th id="rot-5a" style="background-color:#e6f4b1">Categoria</th><td style="background-color:#bcd9f5" id="tab-5a"></td><th id="rot-5b" style="background-color:#f7c7d1">Gênero</th><td style="background-color:#d2f9d6" id="tab-5b"></td></tr>
+            <tr><th id="rot-6a" style="background-color:#c2a6f2">Editora</th><td style="background-color:#f4deb1" id="tab-6a"></td><th id="rot-6b" style="background-color:#bcf5f3">Edição</th><td style="background-color:#f7c7eb" id="tab-6b"></td></tr>
+            <tr><th id="rot-7a" style="background-color:#e4f9d2">Páginas</th><td style="background-color:#a6b3f2" id="tab-7a"></td><th id="rot-7b" style="background-color:#f4b9b1">Dimensões</th><td style="background-color:#bcf5d4" id="tab-7b"></td><td style="background-color:#e9c7f7" rowspan="3">Características</td></tr>
+            <tr><th id="rot-8a" style="background-color:#f9f9d2">ISBN</th><td style="background-color:#a6dcf2" id="tab-8a"></td><th id="rot-8b" style="background-color:#f4b1cd">Publicação</th><td style="background-color:#c3f5bc" id="tab-8b"></td></tr>
+            <tr><th id="rot-9a" style="background-color:#cfc7f7">Preço</th><td style="background-color:#f9e4d2" id="tab-9a"></td><th id="rot-9b" style="background-color:#a6f2df">Unidade</th><td style="background-color:#f4b1f1" id="tab-9b"></td></tr>
+            <tr><th style="background-color:#e2f5bc">Descrição</th><td style="background-color:#c7d9f7" colspan="3" id="tab-descricao"></td><td style="background-color:#f9d2d6" rowspan="2">Resumo</td></tr>
+            <tr><th id="rot-11" style="background-color:#a6f2b6">Resenha</th><td style="background-color:#d2b1f4" colspan="3" id="tab-11">Leia a resenha completa logo abaixo desta tabela.</td></tr>
+            <tr><th style="background-color:#f5e9bc" colspan="5">Informações da loja</th></tr>
+            <tr><th style="background-color:#c7f3f7">Loja</th><td style="background-color:#f9d2ea">Lumina Livros</td><th style="background-color:#bff2a6">Tempo de mercado</th><td style="background-color:#b1b4f4">7 anos</td><td style="background-color:#f5cabc" rowspan="3">Lumina</td></tr>
+            <tr><th style="background-color:#c7f7e1">Filiais</th><td style="background-color:#f2d2f9">25</td><th style="background-color:#e9f2a6">Estados</th><td style="background-color:#b1d8f4">4</td></tr>
+            <tr><th style="background-color:#f5bccd">Diferencial</th><td style="background-color:#c7f7c7">Curadoria exclusiva</td><th style="background-color:#ded2f9">Fidelidade</th><td style="background-color:#f2d2a6">Descontos progressivos</td></tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
-    <!-- ===== RESENHA LONGA COM ÂNCORA (Req 6 e Req 9) =====
-         Texto longo com formatações variadas e link para voltar ao topo. -->
+    <!-- ===== RESENHA COMPLETA DO LIVRO ===== -->
     <section id="topo-resenha">
       <h2>Resenha Completa</h2>
-      <p>
-        <!-- TODO Nathan (Req 9): usar <strong>, <em>, <u>, <sup>, <sub>,
-             <s>, <small>/<big> (tamanhos), diferentes <h3>/<h4> (títulos),
-             <blockquote> (citação) ao longo do texto. -->
-      </p>
+      <div id="texto-resenha-completa" class="resenha-conteudo"></div>
+
       <p style="margin-top: var(--espaco-md);">
         <a href="#topo-resenha">↑ Voltar ao topo</a>
       </p>

@@ -9,7 +9,9 @@
 <body>
 
   <header class="cabecalho">
-    <div class="logo">Lumina</div>
+    <a href="homepage.html" class="logo">
+      <img src="img/logo/lumina-logo.svg" alt="Lumina Livros">
+    </a>
     <nav>
       <ul class="menu-principal">
         <li><a href="homepage.html">Início</a></li>
@@ -29,7 +31,6 @@
     <br>
     <p>Uma seleção de 25 resenhas na íntegra dos nossos livros em destaque.</p>
 
-    <!-- Índice de âncoras para as 25 seções abaixo -->
     <nav class="indice-resenhas" aria-label="Índice de resenhas">
       <ol>
         <li><a href="#resenha-1">O Poderoso Chefão</a></li>
@@ -60,7 +61,25 @@
       </ol>
     </nav>
 
-    <!-- ===== 25 Seções de Resenhas ===== -->
+
+    <section class="guia-leitura">
+      <h2>Guia de leitura</h2>
+      <p class="texto-grande">Leia com calma: cada resenha foi escolhida pela equipe da <strong>Lumina</strong>.</p>
+      <hr>
+      <h3>Como ler as resenhas</h3>
+      <p>Os títulos dos livros aparecem em <em>itálico</em>, como em <em>O Poderoso Chefão</em>, na 48<sup>a</sup> edição. Os pontos importantes vêm <u>sublinhados</u>.</p>
+      <h4>Para quem estuda tecnologia</h4>
+      <p>Em <em>Fundamentos de HTML5 e CSS3</em>, os títulos de uma página vão de H<sub>1</sub> a H<sub>6</sub>.</p>
+      <h4>Promoção da Rainha do Crime</h4>
+      <p>Conhecida como <q>Rainha do Crime</q>, Agatha Christie tem campanha na Lumina: o preço cheio fica <del>taxado</del> e você economiza até 35% com o cupom <strong>RAINHADOCRIME</strong>.</p>
+      <blockquote>
+        <p>Lumina: Onde cada página acende uma ideia.</p>
+        <cite>Lema da Lumina Livros</cite>
+      </blockquote>
+      <hr>
+      <p><span class="texto-pequeno">Texto pequeno</span> · <span class="texto-grande">texto grande</span> · <span class="fonte-serifada">fonte com serifa</span> · <span class="fonte-mono">fonte monoespaçada</span></p>
+      <p><a href="#topo">↑ Voltar ao topo</a></p>
+    </section>
 
     <section id="resenha-1" class="resenha">
       <h2>O Poderoso Chefão</h2>
